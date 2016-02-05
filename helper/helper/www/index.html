@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html ng-app="mainApp">
+<head>
+    <meta charset="utf-8" />
+    <link href="css/index.css" rel="stylesheet" />
+    <!------------------------------------------------------------->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="WinJS/css/ui-light.css" rel="stylesheet" />
+    <script src="WinJS/js/base.js"></script>
+    <script src="WinJS/js/ui.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+    <script src="js/default.js"></script>
+    <script src="js/enter_customer_page.js"></script>
+    <title>podsobniki.by</title>
+    <!------------------------------------------------------------->
+</head>
+<body ng-controller="mainController">
+    <div id="main">
+        <div ng-view>
+
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
