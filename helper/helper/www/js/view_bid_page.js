@@ -1,17 +1,4 @@
-﻿function getCookie(cname)
-{
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
-}
-
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function ($scope, $http)
+﻿mainApp.controller('viewBidController', function ($scope, $http)
 {
     var curbidid = getCookie("curbidid");
     $http.get("http://fafanya.netau.net/ui/dbquery/bid_details_by_customer_query.php?id=" + curbidid)
@@ -20,6 +7,7 @@ app.controller('customersCtrl', function ($scope, $http)
         $scope.name = response.name;
         $scope.category = response.category;
         $scope.id = response.id;
+        $scope.files = response.files;
         $scope.summary = response.summary;
         $scope.categories = response.categories;
         $scope.selectedcategory = response.selectedcategory;
@@ -35,12 +23,12 @@ app.controller('customersCtrl', function ($scope, $http)
             + id + "&name=" + name + "&summary=" + summary + "&category_id=" + category_id)
         .success(function (response) {
             document.cookie = "curbidid=" + id;
-            window.location = "../html/edit_bid_page.html";
+            window.location = "#view_bid_page";
         });
     };
 
     $scope.cancelBid = function (id) {
-        window.location = "../html/customer_page.html";
+        window.location = "#customer_page";
     };
 
     $scope.addComment = function (id)
@@ -51,7 +39,7 @@ app.controller('customersCtrl', function ($scope, $http)
             + id  + "&summary=" + comment + "&userid=" + userid)
         .success(function (response)
         {
-            window.location = "../html/view_bid_page.html";
+            window.location = "#view_bid_page";
         });
     }
 });

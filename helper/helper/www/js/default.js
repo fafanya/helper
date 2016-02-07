@@ -11,9 +11,14 @@
 }
 
 var mainApp = angular.module('mainApp', ['ngRoute']);
-mainApp.config(function ($routeProvider) {
+mainApp.config(function ($routeProvider)
+{
     $routeProvider
     .when('/', {
+        templateUrl: '../html/main_page.html',
+        controller: 'mainController'
+    })
+    .when('/main_page', {
         templateUrl: '../html/main_page.html',
         controller: 'mainController'
     })
@@ -29,47 +34,40 @@ mainApp.config(function ($routeProvider) {
         templateUrl: '../html/enter_performer_page.html',
         controller: 'enterPerformerController'
     })
-    .when('/customer_page',{
+    .when('/customer_page', {
         templateUrl: '../html/customer_page.html',
         controller: 'customerController'
+    })
+    .when('/performer_page', {
+        templateUrl: '../html/performer_page.html',
+        controller: 'performerController'
+    })
+    .when('/add_bid_page', {
+        templateUrl: '../html/add_bid_page.html',
+        controller: 'addBidController'
+    })
+    .when('/view_bid_page', {
+        templateUrl: '../html/view_bid_page.html',
+        controller: 'viewBidController'
+    })
+    .when('/edit_bid_page', {
+        templateUrl: '../html/edit_bid_page.html',
+        controller: 'editBidController'
+    })
+    .when('/registration_customer_page', {
+        templateUrl: '../html/registration_customer_page.html',
+        controller: 'registrationCustomerController'
+    })
+    .when('/registration_performer_page', {
+        templateUrl: '../html/registration_performer_page.html',
+        controller: 'registrationPerformerController'
+    })
+    .when('/all_bids_page', {
+        templateUrl: '../html/all_bids_page.html',
+        controller: 'allBidsController'
     });
 });
 mainApp.controller('mainController', function ($scope) {
 });
 mainApp.controller('enterController', function ($scope) {
-});
-mainApp.controller('enterPerformerController', function ($scope) {
-});
-mainApp.controller('customerController', function ($scope, $http)
-{
-    var userid = getCookie("userid");
-    var t = 1 + 1;
-    $http({
-        method: 'GET',
-        url: "http://fafanya.netau.net/ui/dbquery/bid_list_by_customer_query.php?userid=" + userid + "&client=android"
-    }).then(function successCallback(response)
-    {
-        $scope.names = response.data.records;
-    },
-    function errorCallback(response)
-    {
-        var error = response;
-    });
-
-    $scope.deleteBid = function (id) {
-        $http.get("http://fafanya.netau.net/ui/delete_bid_action.php?id=" + id + "&client=android")
-        .success(function (response) {
-            window.location = "../html/customer_page.html";
-        });
-    };
-
-    $scope.viewBid = function (id) {
-        document.cookie = "curbidid=" + id;
-        window.location = "../html/view_bid_page.html";
-    };
-
-    $scope.editBid = function (id) {
-        document.cookie = "curbidid=" + id;
-        window.location = "../html/edit_bid_page.html";
-    };
 });
