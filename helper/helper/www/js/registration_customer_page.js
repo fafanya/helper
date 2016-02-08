@@ -4,9 +4,9 @@
         var p = document.getElementById("inputPassword").value;
         var e = document.getElementById("inputEmail").value;
 
-        $http.get("http://fafanya.netau.net/ui/dbquery/add_customer_query.php?login=" + l + "&password=" + p + "&email=" + e + "&client=android")
+        $http.get("http://fafanya.netau.net/ui/dbquery/add_customer_query.php?name=" + l + "&password=" + p + "&email=" + e + "&client=android")
         .success(function (response) {
-            window.location = "#";
+            window.location = "#enter_as_customer";
         });
 
     };

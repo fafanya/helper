@@ -54,6 +54,10 @@ mainApp.config(function ($routeProvider)
         templateUrl: '../html/edit_bid_page.html',
         controller: 'editBidController'
     })
+    .when('/registration_page', {
+        templateUrl: '../html/registration_page.html',
+        controller: 'registrationController'
+    })
     .when('/registration_customer_page', {
         templateUrl: '../html/registration_customer_page.html',
         controller: 'registrationCustomerController'
@@ -68,6 +72,8 @@ mainApp.config(function ($routeProvider)
     });
 });
 mainApp.controller('mainController', function ($scope) {
+});
+mainApp.controller('registrationController', function ($scope) {
 });
 mainApp.controller('enterController', function ($scope) {
 });
