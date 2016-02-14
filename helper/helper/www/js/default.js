@@ -15,59 +15,59 @@ mainApp.config(function ($routeProvider)
 {
     $routeProvider
     .when('/', {
-        templateUrl: '../html/main_page.html',
+        templateUrl: 'html/main_page.html',
         controller: 'mainController'
     })
     .when('/main_page', {
-        templateUrl: '../html/main_page.html',
+        templateUrl: 'html/main_page.html',
         controller: 'mainController'
     })
     .when('/enter_as', {
-        templateUrl: '../html/enter_page.html',
+        templateUrl: 'html/enter_page.html',
         controller: 'enterController'
     })
     .when('/enter_as_customer', {
-        templateUrl: '../html/enter_customer_page.html',
+        templateUrl: 'html/enter_customer_page.html',
         controller: 'enterCustomerController'
     })
     .when('/enter_as_performer', {
-        templateUrl: '../html/enter_performer_page.html',
+        templateUrl: 'html/enter_performer_page.html',
         controller: 'enterPerformerController'
     })
     .when('/customer_page', {
-        templateUrl: '../html/customer_page.html',
+        templateUrl: 'html/customer_page.html',
         controller: 'customerController'
     })
     .when('/performer_page', {
-        templateUrl: '../html/performer_page.html',
+        templateUrl: 'html/performer_page.html',
         controller: 'performerController'
     })
     .when('/add_bid_page', {
-        templateUrl: '../html/add_bid_page.html',
+        templateUrl: 'html/add_bid_page.html',
         controller: 'addBidController'
     })
     .when('/view_bid_page', {
-        templateUrl: '../html/view_bid_page.html',
+        templateUrl: 'html/view_bid_page.html',
         controller: 'viewBidController'
     })
     .when('/edit_bid_page', {
-        templateUrl: '../html/edit_bid_page.html',
+        templateUrl: 'html/edit_bid_page.html',
         controller: 'editBidController'
     })
     .when('/registration_page', {
-        templateUrl: '../html/registration_page.html',
+        templateUrl: 'html/registration_page.html',
         controller: 'registrationController'
     })
     .when('/registration_customer_page', {
-        templateUrl: '../html/registration_customer_page.html',
+        templateUrl: 'html/registration_customer_page.html',
         controller: 'registrationCustomerController'
     })
     .when('/registration_performer_page', {
-        templateUrl: '../html/registration_performer_page.html',
+        templateUrl: 'html/registration_performer_page.html',
         controller: 'registrationPerformerController'
     })
     .when('/all_bids_page', {
-        templateUrl: '../html/all_bids_page.html',
+        templateUrl: 'html/all_bids_page.html',
         controller: 'allBidsController'
     });
 });
